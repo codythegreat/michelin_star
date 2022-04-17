@@ -6515,7 +6515,8 @@ def scrape_desc(row):
     page = urlopen(row["url"])
     html = page.read().decode("utf-8")
     soup = BeautifulSoup(html, "html.parser")
-    out += f"{row['id']}: {soup.find('div', {'class': 'js-show-description-text'}).text}"
+    cleaned_desc = soup.find('div', {'class': 'js-show-description-text'}).text.replace("'", "\'").replace("’", "\'")
+    out += f"    ({row['id']}, '{cleaned_desc}'),"
 
 for row in urls:
     print(f"queing {row['id']}...")
@@ -6532,5 +6533,5 @@ for row in urls:
     threads[current_thread] = threading.Thread(target=scrape_desc, args=(row,))
     threads[current_thread].start()
     current_thread += 1
-with open('readme.txt', 'w') as f:
+with open('desc.txt', 'w') as f:
     f.write(out)
