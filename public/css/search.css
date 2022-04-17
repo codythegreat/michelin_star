@@ -1,0 +1,16 @@
+#search-section {
+    background-color: #ddd;
+    padding: 2rem 10%;
+    width: 80%;
+}
+
+#results-section {
+
+}
+
+.search-result {
+    
+}
+.search-result h2 {
+    border-bottom: 1px solid black;
+}

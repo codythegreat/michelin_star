@@ -1,22 +1,28 @@
-body {
-    font-family: 'Oswald', sans-serif;
-    /* background-color: #333; */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
 #content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     text-align: right;
+    overflow: hidden;
+}
+
+#award-hint-section {
+    display: flex;
+}
+#award-hint-header {
+    flex-grow: 1;
+    font-size: 2rem;
+    margin: auto 100px auto auto;
 }
 
 #search-section {
     display: flex;
     margin: 0 auto;
+}
+#search-section input {
+    border-radius: 5px;
+    border: 1px solid #bbb;
 }
 
 #scrolling-text-section {
