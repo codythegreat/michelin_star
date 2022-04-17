@@ -41,7 +41,10 @@ app.get('/search', (req, res) => {
         if (error) {
             return console.log(error.message);
         }
-        res.render('search', {results: results[0]});
+        res.render('search', {
+            query: query,
+            results: results[0]
+        });
     });
 });
 
