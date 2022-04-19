@@ -11,11 +11,31 @@
     <section id="results-section">
     {{#each results}}
         <div class="search-result">
-            <h2 class="restaurant-name">{{name}}</h2>
-            <h3 class="restaurant-award" title="{{award}}">{{award}}</h3>
-            <h5 class="restaurant-description">{{description}}</h5>
-            <p class="restaurant-cuisine">{{cuisine}}</p>
-            <a class="restaurant-url" href="{{websiteurl}}">{{name}} Website</a>
+            <div class="search-result-header">
+                <div class="search-result-header-text">
+                    <h2 class="restaurant-name">{{name}}</h2>
+                    <p class="restaurant-cuisine">{{cuisine}}</p>
+                    <p class="restaurant-award" title="{{award}}">{{award}}</p>
+                </div>
+                <div class="search-result-header-image">
+                    <img src="/images/{{id}}-img.webp" alt="{{name}} Image">
+                </div>
+            </div>
+            <div class="search-result-links">
+                <a class="restaurant-url" href="{{websiteurl}}">{{name}} Website</a>
+                <a class="restaurant-url" href="{{url}}">Michelin Guide for {{name}}</a>
+            </div>
+            <div class="search-result-description">
+                <p class="restaurant-description">{{description}}</p>
+            </div>
+            <div class="search-result-misc-details">
+                <ul>
+                {{#if phonenumber}}
+                    <li>{{phonenumber}}</li>
+                {{/if}}
+                    <li>{{address}}</li>
+                </ul>
+            </div>
         </div>
     {{/each}}
     </section>

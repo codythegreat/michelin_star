@@ -5,12 +5,51 @@
 }
 
 #results-section {
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background-color: #41393E;
 }
 
 .search-result {
-    
+    border-radius: 10px;
+    /* border: 1px solid #bbb; */
+    width: 300px;
+    margin: 1rem;
 }
-.search-result h2 {
-    border-bottom: 1px solid black;
+.search-result-header {
+    display: flex;
+    border-bottom: 1px solid #bbb;
+    justify-content: space-between;
+    height: min-content;
 }
+
+.search-result-header-text {
+    margin: 1rem 0 0 1rem;
+}
+
+.search-result-header-text * {
+    margin: 0;
+}
+
+.search-result-header .restaurant-award {
+    cursor: default;
+}
+
+.search-result-header-image {
+    max-height: 150px;
+}
+
+.search-result-header-image img {
+    max-width: 150px;
+    height: 150px;
+    /* border-top-right-radius: 10px; */
+}
+
+.search-result-links {
+    border-bottom: 1px solid #bbb;
+    display: flex;
+    flex-direction: column;
+}
+

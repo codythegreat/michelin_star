@@ -10,6 +10,7 @@
 #award-hint-section {
     display: flex;
 }
+
 #award-hint-header {
     flex-grow: 1;
     font-size: 2rem;
@@ -20,39 +21,9 @@
     display: flex;
     margin: 0 auto;
 }
+
 #search-section input {
     border-radius: 5px;
     border: 1px solid #bbb;
 }
 
-#scrolling-text-section {
-    white-space: nowrap;
-}
-
-p.scrolling-text__right {
-    position: relative;
-    text-align: left;
-    animation: marquee 60s linear infinite;
-}
-p.scrolling-text__left {
-    position: relative;
-    text-align: left;
-    animation: marquee-reverse 60s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes marquee-reverse {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
