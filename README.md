@@ -2,15 +2,16 @@
 
 A project that uses the following data: https://www.kaggle.com/datasets/ngshiheng/michelin-guide-restaurants-2021
 
-Use the following to start the project:
+Use the following to start the server:
 
 ```
+npm install
 node server.js
 ```
 
 This will start a server at localhost:8000. Go to that web address in chrome to see the site.
 
-You can import data from `michelin__clearned.csv` into a DB of your choice. I used MySQL.
+You'll also want to create a DB. You can import data from `michelin__clearned.csv` into a DB of your choice. I used MySQL.
 
 Check the DB folder for statements to create tables. You'll also need to run the web scrapers to get descriptions and images for the restaurants.
 
