@@ -3,3 +3,4 @@ cuisines.txt
 node_modules/
 desc-*.txt
 public/images/
+DB/load_description*
