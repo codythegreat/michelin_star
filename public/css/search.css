@@ -1,5 +1,5 @@
 #search-section {
-    background-color: #ddd;
+    background-color: #568259;
     padding: 2rem 10%;
     width: 80%;
 }
@@ -9,7 +9,8 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 2rem;
-    background-color: #41393E;
+    background-color: #D6CFCB;
+    color: #41393E;
 }
 
 .search-result {
@@ -53,3 +54,10 @@
     flex-direction: column;
 }
 
+.search-result-misc-details li:nth-of-type(1)::marker {
+    content: "📞 ";
+}
+
+.search-result-misc-details li:nth-of-type(2)::marker {
+    content: "🌎 ";
+}

@@ -22,7 +22,9 @@
                 </div>
             </div>
             <div class="search-result-links">
+                {{#if websiteurl}}
                 <a class="restaurant-url" href="{{websiteurl}}">{{name}} Website</a>
+                {{/if}}
                 <a class="restaurant-url" href="{{url}}">Michelin Guide for {{name}}</a>
             </div>
             <div class="search-result-description">
