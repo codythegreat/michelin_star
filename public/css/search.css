@@ -15,7 +15,6 @@
 
 .search-result {
     border-radius: 10px;
-    /* border: 1px solid #bbb; */
     width: 300px;
     margin: 1rem;
 }
@@ -45,7 +44,6 @@
 .search-result-header-image img {
     max-width: 150px;
     height: 150px;
-    /* border-top-right-radius: 10px; */
 }
 
 .search-result-links {
@@ -60,4 +58,9 @@
 
 .search-result-misc-details li:nth-of-type(2)::marker {
     content: "🌎 ";
+}
+
+span.dots {
+    color: black !important;
+    font-weight: bolder;
 }
