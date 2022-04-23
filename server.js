@@ -7,14 +7,14 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
 const mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : process.env.MYSQLPW,
-  database : 'michelin'
+var pool = mysql.createPool({
+    connectionLimit : 10,
+    host     : 'localhost',
+    user     : 'root',
+    password : process.env.MYSQLPW,
+    database : 'michelin'
 });
  
-connection.connect();
 
 // Search SP call
 let sql = `CALL sp_get_search_result(?)`;
@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 // search page
 app.get('/search', (req, res) => {
     const query = req.query.query;
-    connection.query(sql, query, (error, results, fields) => {
+    pool.query(sql, query, (error, results, fields) => {
         if (error) {
             return console.log(error.message);
         }
