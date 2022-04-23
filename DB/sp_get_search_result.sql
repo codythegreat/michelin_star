@@ -25,6 +25,7 @@ BEGIN
         or
         ms.address LIKE CONCAT('%', _query , '%')
         or
-        ms.cuisine LIKE CONCAT('%', _query , '%');
-
+        ms.cuisine LIKE CONCAT('%', _query , '%')
+        or
+        d.description LIKE CONCAT('$', _query , '%');
 END
