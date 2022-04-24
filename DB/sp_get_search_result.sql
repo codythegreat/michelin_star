@@ -1,5 +1,7 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `michelin`.`sp_get_search_result`(IN _query varchar(512))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `michelin`.`sp_get_search_result`(IN _query varchar(512), IN _page int)
 BEGIN
+    DECLARE offset int;
+	SET offset = (_page - 1) * 20;
 	SELECT
 		ms.id,
         ms.name,
@@ -27,5 +29,7 @@ BEGIN
         or
         ms.cuisine LIKE CONCAT('%', _query , '%')
         or
-        d.description LIKE CONCAT('$', _query , '%');
+        d.description LIKE CONCAT('$', _query , '%')
+    LIMIT
+        offset, 20;
 END
