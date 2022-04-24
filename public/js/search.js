@@ -37,3 +37,18 @@ document.querySelectorAll('.restaurant-description').forEach(el => {
 
     }
 });
+
+document.querySelectorAll('.page-btn').forEach(el => {
+    el.addEventListener('click', function() {
+        let page = document.getElementById('page');
+        if (el.id === "next-page-btn") {
+            // increment form page input
+            page.value = Number(page.value) + 1;
+        } else if (el.id === "prev-page-btn") {
+            // decrement form page input
+            page.value = Number(page.value) - 1;
+        }
+        // submit the form
+        document.getElementById('search-form').submit();
+    });
+});

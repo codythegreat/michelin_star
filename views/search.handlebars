@@ -3,8 +3,9 @@
 <script src="/js/search.js" defer></script>
 <div id="content">
     <section id="search-section">
-        <form id=search-form" action="/search" meathod="GET">
+        <form id="search-form" action="/search" meathod="GET">
             <input type="text" id="query" name="query" value="{{query}}">
+            <input type="hidden" id="page" name="page" value="{{page}}">
             <button type="submit">Search</button>
         </form>
     </section>
@@ -40,5 +41,9 @@
             </div>
         </div>
     {{/each}}
+    </section>
+    <section id="page-select-section">
+        <button class="page-btn" id="prev-page-btn">Previous Page</button>
+        <button class="page-btn" id="next-page-btn">Next Page</button>
     </section>
 </div>

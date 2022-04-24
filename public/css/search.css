@@ -76,3 +76,7 @@ span.dots {
     color: black !important;
     font-weight: bolder;
 }
+
+#page-select-section {
+    background-color: red;
+}
