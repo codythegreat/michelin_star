@@ -17,7 +17,7 @@ var pool = mysql.createPool({
  
 
 // Search SP call
-let sql = `CALL sp_get_search_result(?)`;
+let sql = `CALL sp_get_search_result(?, ?)`;
 
 // use static files, allows for css/javascript links
 app.use(express.static('public'));
@@ -30,12 +30,15 @@ app.get('/', function(req, res) {
 // search page
 app.get('/search', (req, res) => {
     const query = req.query.query;
-    pool.query(sql, query, (error, results, fields) => {
+    const page = req.query.page === undefined ? 1 : req.query.page ;
+    if (page == undefined) { page = 1; }
+    pool.query(sql, [query, page], (error, results, fields) => {
         if (error) {
             return console.log(error.message);
         }
         res.render('search', {
             query: query,
+            page: page,
             results: results[0]
         });
     });
